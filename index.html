@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WINISIS PRO | Premium Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a CDN for generic icons to avoid image dependencies, user can replace if offline -->
+    <!-- Ideally we would use local SVGs, but for this demo standard emojis or extensive CSS shapes will be used in js -->
+</head>
+
+<body>
+
+
+
+
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>WINISIS</h1>
+                <div class="brand-subtitle">Pro Edition</div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" onclick="app.navigateTo('dashboard')" id="nav-dashboard">
+                    <i>🏠</i> Dashboard
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('definition')" id="nav-definition">
+                    <i>📝</i> Definition
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('data-entry')" id="nav-data-entry">
+                    <i>⌨️</i> Data Entry
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('search')" id="nav-search">
+                    <i>🔍</i> Search
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('dictionary')" id="nav-dictionary">
+                    <i>📖</i> Dictionary
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('browse')" id="nav-browse">
+                    <i>📚</i> Browse
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('help')" id="nav-help">
+                    <i>❓</i> Help
+                </a>
+            </nav>
+
+            <div class="brand"
+                style="border-top: 1px solid var(--border-color); border-bottom: none; padding-top: 20px; margin-top: auto;">
+                <div class="status-indicator" style="justify-content: center; background: transparent; border: none;">
+                    <span id="current-db-ind" class="db-pill">No Database</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="page-title">
+                    <h2 id="page-title-text">Dashboard</h2>
+                </div>
+                <div class="user-profile">
+                    <!-- Placeholder for user or simple clock -->
+                    <span style="color: var(--text-muted); font-family: var(--font-mono);"
+                        id="system-clock">12:00</span>
+                </div>
+            </header>
+
+            <div id="content-area" class="workspace">
+                <!-- Dynamic Content Loads Here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple Clock
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('system-clock').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }, 1000);
+    </script>
+</body>
+
+</html>
